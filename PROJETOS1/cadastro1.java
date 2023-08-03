@@ -1,6 +1,6 @@
 package PROJETOS1;
 
-import java.net.StandardSocketOptions;
+
 import java.util.Scanner;
 
 public class cadastro1 {

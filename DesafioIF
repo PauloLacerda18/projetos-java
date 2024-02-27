@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+//desafio dia da semana com if e else
+
+public class  DesafioIF{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("digite um dia da semana: segunda ou terça:");
+        String dia = input.nextLine();
+
+        if("segunda".equalsIgnoreCase(dia)){
+            System.out.println("1");
+        } else if( "terça".equalsIgnoreCase(dia)){
+            System.out.println("2");
+        }
+
+        
+
+    
+       
+}
+}

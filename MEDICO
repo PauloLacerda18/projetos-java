@@ -1,0 +1,61 @@
+package provapratica;
+
+public class Medico{
+	public String nome;
+	public String especializacao;
+	public String formacao;
+	
+	public Medico(String nome,String especializacao,String formacao) {
+		this.nome=nome;
+		this.especializacao=especializacao;
+		this.formacao=formacao;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEspecializacao() {
+		return especializacao;
+	}
+
+	public void setEspecializacao(String especializacao) {
+		this.especializacao = especializacao;
+	}
+
+	public String getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(String formacao) {
+		this.formacao = formacao;
+	}
+    public String nometoString() {
+    	return "Nome:" + getNome();	
+    }
+    public String mostrarspectoString() {
+    	return  "\nEspecializado em:" + getEspecializacao();
+    }
+    public String mostraformatoString() {
+    	return ("\nFormado na:" + getFormacao() );
+    }
+   }
+
+   public class Main {
+	public static void main(String args[]) {
+	Medico medico1 = new Medico("Joao Victor","Cardiologia","Universidade de Sao Paulo(USP)");
+	Medico medico2 = new Medico("Lucas Henrique","Neurologia","Universidade Estadual do Ceara(UECE)");
+	Medico medico3 = new Medico("Pablo Escobar","Dermatologia","Universidade Federal do Ceara(UFC)"); 
+		System.out.println(medico1.nometoString()+ medico1.mostrarspectoString()+ medico1.mostraformatoString());
+		System.out.println("-----------------------------------------");
+		System.out.println(medico2.nometoString()+ medico2.mostrarspectoString()+ medico2.mostraformatoString());
+		System.out.println("-----------------------------------------------");
+		System.out.println(medico3.nometoString()+ medico3.mostrarspectoString()+ medico3.mostraformatoString());
+		System.out.println("--------------------------------------------");
+	}
+
+}

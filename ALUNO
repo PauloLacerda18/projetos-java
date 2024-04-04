@@ -1,0 +1,73 @@
+package EXERCICIOSDELPOO;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class Aluno {
+    
+
+
+    private BigInteger matricula;
+    private String nome;
+
+
+    public  void Verificarmatricula(Scanner input){
+        System.out.println(" diga sua matricula");
+        matricula  = new BigInteger(input.nextLine());
+        
+    }
+
+    public  void Verificarnome(Scanner input){
+        System.out.println(" diga  seu nome");
+        nome  = input.nextLine();     
+    }
+    
+    public BigInteger  getMatricula() {
+        return matricula;
+    }
+    public void setMatricula(BigInteger matricula) {
+        this.matricula = matricula;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+   @Override
+   public String toString(){
+        return "matricula: " + getMatricula() + ", nome: " + getNome();
+   }
+}
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class PrincipalAluno {
+    public static void main(String[] args) {
+        Aluno aluno1 = new Aluno();
+        Aluno aluno2 = new Aluno();
+        Scanner input = new Scanner(System.in);
+       
+        aluno1.Verificarmatricula(input);
+        aluno1.Verificarnome(input);
+     
+           
+
+        System.out.printf(aluno1.toString());  
+        
+
+
+        aluno2.Verificarmatricula(input);
+        aluno2.Verificarnome(input);
+
+        System.out.printf("\n",aluno2.toString());
+
+        input.close();
+    }
+
+    
+}

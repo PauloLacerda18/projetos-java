@@ -1,0 +1,11 @@
+//MOTO
+package apss1;
+class Moto extends Veiculo {
+	public Moto(String tipo, String prop,String marca) {
+		 super(tipo,prop,marca);
+	}
+	@Override
+	public String toString() {
+		return null;
+	}
+}

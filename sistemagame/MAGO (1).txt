@@ -1,0 +1,28 @@
+//MAGO
+package apss;
+
+  class Maguinho extends Pers {
+public Maguinho(String nome, int level, String tipo) {
+	super(nome,level,tipo);
+}
+@Override
+public String toString() {
+	return "Nome:" + nome + "\nSeu Nivel é:" + level ;
+}
+public void atacar() {
+	System.out.println("O mago "+nome+ "(🧙‍♂️)" + " utiliza seu cajado e ataca seu oponete o que causa pouco dano.");
+	System.out.println("---------------------------------");
+}
+public void defender() {
+	System.out.println("O mago "+nome+ "(🧙‍♂️)" + " tenta se defender mas sofre mais de 60% de dano.");
+	System.out.println("---------------------------------");
+}
+public void soltar_magia() {
+	System.out.println("O mago "+nome+ "(🧙‍♂️)" +" solta um orbe de magia que causa muito dano.");
+	System.out.println("---------------------------------");
+}
+public void provocar() {
+	System.out.println("O mago "+nome+ "(🧙‍♂️)" + " provoca seu inimigo o transformando em um palhaço, o mago é implacavél.");
+	System.out.println("---------------------------------");
+}
+}

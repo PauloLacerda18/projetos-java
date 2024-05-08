@@ -1,0 +1,58 @@
+package Moradia;
+
+import java.util.Scanner;
+
+public class Apartamento extends Moradia {
+	
+		
+		
+		public Apartamento(int quantidadedequartos,int quantidadedebanheiros, String localizacaodesejada,String quaismoveis) {
+		    	super( quantidadedequartos, quantidadedebanheiros, localizacaodesejada, quaismoveis);
+		    }
+		    
+		    String escolhermoveis;
+		    
+		    
+		    public void quartos(Scanner quartos1){
+		        System.out.println("quantos quartos voce quer que tenha no apartamento?");
+		        quantidadedequartos = quartos1.nextInt();
+
+		    }
+
+		    public void banheiros(Scanner banheiro){
+		        System.out.println("quantos banheiros voce quer que tenha no apartamento?");
+		        quantidadedebanheiros = banheiro.nextInt();
+		    }
+
+		    public void localizacao(Scanner localizacao) {
+		        System.out.println("em qual localização? fortaleza ou caucaia?");
+		        localizacaodesejada = localizacao.next();
+		    }
+		    
+		  
+
+		    public void  moveis(Scanner escolher){
+		        System.out.println("deseja que tenha moveis?");
+		        escolhermoveis = escolher.next();
+
+		        if(escolhermoveis.equals("sim")){
+		            System.out.println("quais moveis?");
+		            quaismoveis = escolher.next();
+		        }else{
+		            System.out.println("sem moveis!");
+		        }
+
+		        escolher.nextLine();
+		    }
+
+
+
+
+		    @Override 
+		     public String toString(){
+		        return "quantidade de quartos: " + quantidadedequartos + "\nquantidade de banheiros " + quantidadedebanheiros +
+		        "\nlocalização:" +localizacaodesejada + "\nos moveis são: " + quaismoveis;
+		    }
+
+
+		}

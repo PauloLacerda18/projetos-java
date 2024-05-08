@@ -1,0 +1,11 @@
+//CARRO
+package apss1;
+ class Carro extends Veiculo  {
+	 public Carro(String tipo, String prop,String marca) {
+		 super(tipo,prop,marca);
+	 }
+@Override
+	 public String toString() {
+			return "Marca do carro:" + marca +"\nProprietário do veiculo:" + prop + "\n";
+}
+}

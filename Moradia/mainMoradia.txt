@@ -1,0 +1,92 @@
+package Moradia;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+	
+	public class MainMoradia {
+	    
+	    public static void main(String[] args) {
+	        Scanner ler = new Scanner(System.in);
+	        int ESCOLHA = 0;
+	       
+	        System.out.println("--------Bem vindo ao SIstema de Moradia--------");
+	        System.out.println("O QUE VOCE PROCURA? CASA(1) OU APARTAMENTO(2)");
+	        ESCOLHA = ler.nextInt();
+	        
+  
+	        switch(ESCOLHA) {
+	        case 1:
+	        	Casa minhaCasa = new Casa(0, 0, null, null);
+		        
+		        minhaCasa.quartos(ler);
+		        minhaCasa.banheiros(ler);
+		        minhaCasa.localizacao(ler);
+		        minhaCasa.moveis(ler);   
+
+		        System.out.println(minhaCasa.toString());
+		        System.out.print("Valor de compra: 10 mil" + "\nvalor de aluguel: 5 mil" );
+		        
+		        
+		        break;
+	        case 2 :
+	        	Apartamento ap = new Apartamento(0,0,null,null);
+	 	        ap.quartos(ler);
+	 	        ap.banheiros(ler);
+	 	        ap.localizacao(ler);
+	 	        ap.moveis(ler);  
+	 	        
+	 	        System.out.println(ap.toString());
+	 	       System.out.print("Valor de compra: 200 mil" + "\nvalor de aluguel: 30 mil" );
+	 	        
+	 	        break;
+	 	    default : 
+	 	    	System.out.println("Escolha uma das opções");
+	        }
+	        
+	        System.out.println();
+	        System.out.println();
+	        
+	        ArrayList<String>opcao= new ArrayList<String>();
+	        opcao.add("comprar");
+	        opcao.add("alugar");
+	        System.out.println();
+	        
+	        System.out.println("--------AREA DE COMPRA--------");
+	        System.out.println("opçao disponveis:");
+	        for(String opcao1: opcao) {
+	        System.out.println(opcao1);
+	        }
+	        
+	        System.out.println();
+	        
+	        System.out.println("--------ESCOLHA UMA--------");
+	        String escolher = ler.next();
+	        
+	      
+	        switch(escolher) {
+	        case "comprar":
+	        	
+	        	System.out.println("compra feita");
+	        	System.out.println("--------OBRIGADO PELA COMPRA--------");
+	        	break;
+	        case "alugar":
+	        	System.out.println("alugado para vc");
+	        	System.out.println("-------OBRIGADO POR TER ALUGADO CONOSCO-----");
+	        	break;
+	        default:
+	        	System.out.println("opcao invalida");
+	        }
+	        
+	        
+	        System.out.println("--------VOLTE SEMPRE--------");
+	        
+	       
+	     
+		    
+	        ler.close();
+	        
+	    }
+	}
+	    
+

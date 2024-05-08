@@ -1,0 +1,28 @@
+//ARQUEIRO
+package apss;
+
+ class Arqueiro extends Pers {
+	 public Arqueiro(String nome, int level, String tipo) {
+		 super(nome,level,tipo);
+	 }
+	 @Override
+	 public String toString() {
+			return "Nome:" + nome + "\nSeu Nivel é:" + level ;
+		} 
+  public void atacar() {
+	  System.out.println("O arqueiro "+nome+"(🏹)"+" utiliza seu arco e dispara uma flecha. ");
+	  System.out.println("---------------------------------");
+  }
+ public void defender() {
+	 System.out.println("o arqueiro " +nome+"(🏹)"+" puxa um escudo e se defende do ataque inimigo.");
+	 System.out.println("---------------------------------");
+ }
+ public void soltar_magia() {
+	 System.out.println("o arqueiro "+nome+ "(🏹)"+" transforma fogo em suas flechas com magia piromante.");
+	 System.out.println("---------------------------------");
+ }
+ public void provocar() {
+	 System.out.println("O arqueiro "+nome+"(🏹)"+ " atira flechas pra cima para provocar seu inimigo.");
+	 System.out.println("---------------------------------");
+ }
+}

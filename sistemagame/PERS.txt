@@ -1,0 +1,21 @@
+//PERS
+package apss;
+abstract class Pers {
+	public String nome;
+	public int level;
+	public String tipo;
+public Pers(String nome, int level, String tipo) {
+	this.nome=nome;
+	this.level=level;
+	this.tipo=tipo;}
+
+@Override
+public String toString() {
+	return null;
+}
+protected abstract void atacar();
+protected abstract void defender();
+protected abstract void soltar_magia();
+protected abstract void provocar();
+
+}

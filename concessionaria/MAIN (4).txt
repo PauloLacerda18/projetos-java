@@ -1,0 +1,49 @@
+//MAIN
+package apss1;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class Main_Carro {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		List<Veiculo> veiculos = new ArrayList<>();
+		System.out.println("Quantos carros possuem na concessionaria de compra e venda?");
+		int numVeiculos = sc.nextInt();
+		for(int i = 0; i < numVeiculos; i++) {
+			System.out.println("Informações do Veiculo " + (i+ 1) + ":");
+			sc.nextLine();
+			System.out.println("Qual a marca do Veiculo?");
+			String marca=sc.nextLine();
+			System.out.println("Como se chama o propriétario do veiculo?");
+			String prop = sc.nextLine();
+			String tipo = null;
+			boolean continuar = true;
+			while(continuar) {
+				System.out.println("Qual o tipo de veiculo");
+				System.out.println("1- Carro");
+				System.out.println("2- Moto");
+				tipo=sc.nextLine();
+				if (tipo.equals ("1")) {
+					System.out.println("Carro");
+					continuar= false;
+					break;
+				}else if(tipo.equals("2")) {
+					System.out.println("Moto");
+					continuar=false;
+				}else {
+					System.out.println("Selecione uma opcão válida");
+				}
+				switch(tipo) {
+				case "1":
+					veiculos.add(new Moto(tipo,prop,marca));
+					break;
+				case "2": veiculos.add(new Carro(tipo,prop,marca));
+				    break;
+				}
+			}
+			Carro veic = new Carro(tipo,prop,marca);
+			System.out.println(veic.toString());
+		}
+		sc.close();
+	}
+	}

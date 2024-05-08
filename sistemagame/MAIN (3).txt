@@ -1,0 +1,86 @@
+//MAIN
+package apss;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Pers> personagens = new ArrayList<>();
+        String tipo = null;
+        System.out.print("Quantos personagens deseja cadastrar? ");
+        int numPersonagens = scanner.nextInt();
+        for (int i = 0; i < numPersonagens; i++) {
+            System.out.println("Personagem " + (i + 1) + ":");
+            System.out.println("-----------------");
+            scanner.nextLine();
+            System.out.print("Nome: ");
+            String nome = scanner.nextLine();
+            System.out.print("Nível: ");
+            int level = scanner.nextInt();
+            scanner.nextLine(); 
+            boolean continuar=true;
+            while (continuar) {
+                System.out.println("Escolha o tipo de personagem:");
+                System.out.println("1 - Arqueiro(🏹)");
+                System.out.println("2 - Cavaleiro(🛡️)");
+                System.out.println("3 - Mago(🧙‍♂️)");
+                tipo = scanner.nextLine();
+                if (tipo.equals("1")) {
+                	System.out.println( nome +" escolheu Arqueiro(🏹), pressione enter para continuar.");
+                	scanner.nextLine();
+                	continuar=false;
+                    break;
+                } else if(tipo.equals("2")) {
+                    System.out.println( nome+ " escolheu Cavaleiro((🛡️), pressione enter para continuar");
+                    scanner.nextLine();
+                    continuar=false;
+                    break;
+                }else if(tipo.equals("3")) {
+                	System.out.println( nome+ " escolheu Mago(🧙‍♂️), pressione enter para continuar");
+                	scanner.nextLine();
+                	continuar=false;
+                }else {
+                	System.out.println("Opção Invalida,Por favor escolha uma opção válida");
+                }
+            }
+            switch (tipo) {
+                case "1":
+                    personagens.add(new Arqueiro(nome,level,tipo));
+                    break;
+                case "2":
+                    personagens.add(new Cavaleiro(nome,level,tipo));
+                    break;
+                case "3":
+                    personagens.add(new Maguinho(nome,level,tipo));
+                    break;
+            }
+            }
+        System.out.println("--- Faça sua jogada ---");
+        for (Pers pers : personagens) {
+        	System.out.println(pers);
+        	System.out.println("Escolha a acão do seu personagem" + ":");
+        	System.out.println("1- Atacar");
+        	System.out.println("2- Defender");
+        	System.out.println("3- Soltar Magia");
+        	System.out.println("4- Provocar");
+        	int escolha= scanner.nextInt();
+        	switch (escolha) {
+        	case 1:
+        		pers.atacar();
+        		break;
+        	case 2:
+        		pers.defender();
+        		break;
+        	case 3:
+        		pers.soltar_magia();
+        		break;
+        	case 4:
+        		pers.provocar();
+        		break;
+        }
+    }
+        scanner.close();
+    }
+}
+	
